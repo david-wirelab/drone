@@ -1,22 +1,7 @@
 kind: pipeline
-name: defaultworkspace:
-  base: /go
-  path: src/github.com/yourname/go-drone-hello-worldsteps:
-  - name: test
-    image: golang
-    commands:
-      - go get
-      - go test
+name: defaultworkspace
   - name: build
-    image: golang
+    image: centos
     commands:
-      - go get
-      - go build -o output
-      - chmod +x output
-  - name: run
-    image: golang
-    commands:
-      - go get
-      - go build -o output
-      - chmod +x output
-      - ./output
+      - yum update -y
+      - echo "I am alive!"
