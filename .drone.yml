@@ -1,7 +1,9 @@
-kind: pipeline
-name: defaultworkspace
-  - name: build
+pipeline:
+
+  build: centos
     image: centos
     commands:
       - yum update -y
       - echo "I am alive!"
+    when:
+      event: push
