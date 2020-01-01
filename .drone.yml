@@ -1,8 +1,11 @@
-pipeline:
-  build:
-    image: ukhomeofficedigital/centos-base
-    commands:
-      - yum update -y
-      - echo "I am alive!"
-    when:
-      event: push
+---
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: greeting
+  image: golang:1.12
+  commands:
+  - go build
+  - go test
