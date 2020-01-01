@@ -1,6 +1,6 @@
 pipeline:
 
-  build: centos
+  build:
     image: centos
     commands:
       - yum update -y
