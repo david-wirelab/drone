@@ -1,11 +1,15 @@
 ---
 kind: pipeline
 type: docker
-name: default
+name: test
 
 steps:
 - name: greeting
-  image: golang:1.12
+  image: ukhomeofficedigital/centos-base
   commands:
-  - go build
-  - go test
+  - yum update -y
+  - echo "I am alive!"
+
+trigger:
+  event:
+  - push
