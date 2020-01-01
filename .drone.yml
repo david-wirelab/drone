@@ -1,0 +1,15 @@
+---
+kind: pipeline
+type: docker
+name: test
+
+steps:
+- name: greeting
+  image: ukhomeofficedigital/centos-base
+  commands:
+  - yum update -y
+  - echo "I am alive!"
+
+trigger:
+  event:
+  - push
