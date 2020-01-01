@@ -1,7 +1,6 @@
 pipeline:
-
   build:
-    image: centos
+    image: ukhomeofficedigital/centos-base
     commands:
       - yum update -y
       - echo "I am alive!"
